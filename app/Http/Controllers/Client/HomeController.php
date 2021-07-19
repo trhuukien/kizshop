@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Client;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -12,6 +13,9 @@ class HomeController extends Controller
     public function index()
     {
         $categories = Category::all();
+        $categories->load('products');
+
+        $services = Service::where('role', -1)->get();
 
         $nso = Product::where('cate_id', 1)->paginate(6);
         $nso->load('class', 'server', 'category');
@@ -22,7 +26,7 @@ class HomeController extends Controller
         $llplk = Product::where('cate_id', 3)->paginate(6);
         $llplk->load('class', 'server', 'category');
 
-        return view('client.index', compact('categories', 'nso', 'nro', 'llplk'));
+        return view('client.index', compact('categories', 'services', 'nso', 'nro', 'llplk'));
     }
 
     public function category($slug)

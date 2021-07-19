@@ -14,8 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Client
+/*=======================Client=======================*/
+//Menu
 Route::get('/', [HomeController::class, 'index'])->name('trang-chu');
+Route::get('bai-viet', [HomeController::class, 'post'])->name('bai-viet');
+Route::get('nap-the', [HomeController::class, 'card'])->name('nap-the');
+Route::get('lich-su', [HomeController::class, 'history'])->name('lich-su');
+
+Route::get('dich-vu/{slug}', [HomeController::class, 'service'])->name('dich-vu');
 
 Route::get('danh-muc/{slug}', [HomeController::class, 'category'])->name('danh-muc');
 

@@ -13,12 +13,11 @@
     <title>Trang chủ</title>
 
     <style>
-        div.sticky {
+        .sticky {
             position: -webkit-sticky;
             position: sticky;
             top: 0;
-            background-color: #9f5424;
-            padding: 50px;
+            background-color: #fff;
             font-size: 20px;
             z-index: 999999;
         }
@@ -26,27 +25,135 @@
 </head>
 
 <body>
-    <div class="container">
+    <header>
+        <div class="header-top pt-3">
+            <div class="container d-flex justify-content-between">
+                <span>HOTLINE: 086-89-83-309</span>
+                <span>Language: Tiếng Việt</span>
+            </div>
+        </div>
+    </header>
+    <hr>
+    <div class="content container">
         <div class="sticky">
-            <ul class="d-flex justify-content-between">
-                <li>
-                    <a href="{{route('danh-muc', ['slug' => 'ninja-school-online'])}}">Ninja school</a>
-                </li>
-                <li>
-                    <a href="{{route('danh-muc', ['slug' => 'ngoc-rong-online'])}}">Ngọc rồng</a>
-                </li>
-                <li>
-                    <a href="{{route('danh-muc', ['slug' => 'avatar'])}}">Avatar</a>
-                </li>
-                <li>
-                    <a href="{{route('danh-muc', ['slug' => 'lien-quan-mobile'])}}">Liên quân</a>
-                </li>
-                <li>
-                    <a href="{{route('danh-muc', ['slug' => 'free-fire'])}}">Free fire</a>
-                </li>
-            </ul>
+            <div class="logo">
+                <center><img src="{{asset('storage/img/logo.png')}}" width="200px" alt=""></center>
+            </div>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Navbar</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{{route('trang-chu')}}">Trang chủ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('bai-viet')}}">Bài viết</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Danh mục game
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li>
+                                        <a class="dropdown-item" href="{{route('danh-muc', ['slug' => 'ninja-school-online'])}}">Ninja school</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="{{route('danh-muc', ['slug' => 'ngoc-rong-online'])}}">Ngọc rồng</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="{{route('danh-muc', ['slug' => 'avatar'])}}">Avatar</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="{{route('danh-muc', ['slug' => 'lien-quan-mobile'])}}">Liên quân</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="{{route('danh-muc', ['slug' => 'free-fire'])}}">Free fire</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Dịch vụ
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li>
+                                        <a class="dropdown-item" href="{{route('dich-vu', ['slug' => 'ban-xu-ninja'])}}">Bán xu Ninja</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="{{route('dich-vu', ['slug' => 'ban-luong-ninja'])}}">Bán lượng Ninja</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="{{route('dich-vu', ['slug' => 'thue-nhiem-vu-ninja'])}}">Thuê nhiệm vụ Ninja</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="{{route('dich-vu', ['slug' => 'ban-vang-ngoc-rong'])}}">Bán vàng Ngọc rồng</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="{{route('dich-vu', ['slug' => 'ban-ngoc-ngoc-rong'])}}">Bán ngọc Ngọc rồng</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="{{route('dich-vu', ['slug' => 'thue-nhiem-vu-ngoc-rong'])}}">Thuê nhiệm vụ Ngọc rồng</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('lich-su')}}">Lịch sử</a>
+                            </li>
+                        </ul>
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
         </div>
 
+        <div class="row category">
+            <center>
+                <h2 class="my-3 text-danger">Danh mục game</h2>
+            </center>
+            @foreach($categories as $c)
+            <div class="col-3">
+                <div class="card mb-3">
+                    <img src="{{asset('storage/' . $c->image)}}" class="card-img-top" alt="ninja-school-online-kizshop">
+                    <div class="card-body">
+                        <h5 class="card-title">{{$c->name}}</h5>
+                        <p class="card-text">
+                            Số lượng tài khoản: {{$c->products->count()}} <br>
+                        </p>
+                        <a href="{{route('danh-muc', ['slug' => $c->slug])}}" class="btn btn-primary">Add to cart</a>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+
+        <div class="row service">
+            <center>
+                <h2 class="my-3 text-danger">Dịch vụ game</h2>
+            </center>
+            @foreach($services as $s)
+            <div class="col-3">
+                <div class="card mb-3">
+                    <img src="{{asset('storage/' . $s->image)}}" class="card-img-top" alt="ninja-school-online-kizshop">
+                    <div class="card-body">
+                        <h5 class="card-title">{{$s->name}}</h5>
+                        <p class="card-text">
+                            Số lượng dịch vụ: 1 <br>
+                        </p>
+                        <a href="{{route('dich-vu', ['slug' => $s->slug])}}" class="btn btn-primary">Add to cart</a>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+
+        <!-- 
         <div class="row nso">
             <center>
                 <h2 class="my-3 text-danger">Ninja school online</h2>
@@ -122,7 +229,7 @@
                 </div>
             </div>
             @endforeach
-        </div>
+        </div> -->
     </div>
 
     <script>
